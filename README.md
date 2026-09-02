@@ -37,7 +37,7 @@ pip install "natten==0.15.1+torch210cu118" \
   -f https://whl.natten.org/old/
 ```
 
-The repository contains only the project-specific Python extension of NATTEN. The compiled NATTEN backend is supplied by the official wheel and is not stored in this repository. Other Python, PyTorch, or CUDA versions require a matching NATTEN wheel or a source build.
+
 
 ## Dataset preparation
 
