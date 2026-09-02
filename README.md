@@ -2,14 +2,6 @@
 
 This repository is the **official implementation** of the paper **“Region-aware Frequency Divide-and-Conquer for Shadow Removal”**, published in **Expert Systems with Applications (ESWA), 2026**.
 
-## Pretrained models
-
-The pretrained checkpoints are provided in [`checkpoint`](checkpoint):
-
-| Dataset       | Checkpoint                   |
-| ------------- | ---------------------------- |
-| ISTD-adjusted | `checkpoint/model_aistd.pth` |
-| SRD           | `checkpoint/model_srd.pth`   |
 
 ## Environment
 
@@ -73,11 +65,10 @@ Then run the script from the repository root:
 python utils/boundary_mask.py
 ```
 
-The generated masks will be saved under `<dataset_root>/test_Boundary_k7/`. Keep their filenames identical to the corresponding files in `test_A`, `test_B`, and `test_C`.
+The generated masks will be saved under `<dataset_root>/test_Boundary_k7/`.
 
 ## Testing
 
-Run all commands from the repository root. Always provide `--input_dir`, because the default value in `test.py` is a machine-specific path.
 
 ### SRD
 
@@ -101,15 +92,6 @@ python test.py \
 
 The restored images are written to the directory specified by `--result_dir`, retaining the input filenames. Images whose height is at least 1300 pixels are processed tile by tile; other dimensions are automatically padded to a multiple of 8 and cropped back to their original size after inference.
 
-### Test arguments
-
-| Argument       | Default                    | Description                                                                    |
-| -------------- | -------------------------- | ------------------------------------------------------------------------------ |
-| `--input_dir`  | machine-specific SRD path  | Test-set root containing the four folders above                                |
-| `--result_dir` | `results/srd`              | Output directory                                                               |
-| `--weights`    | `checkpoint/model_srd.pth` | Pretrained checkpoint                                                          |
-| `--gpus`       | `0`                        | CUDA device ID exposed through `CUDA_VISIBLE_DEVICES`                          |
-| `--embed_dim`  | `64`                       | Base model embedding dimension; keep this at `64` for the supplied checkpoints |
 
 ## Citation
 
@@ -117,11 +99,11 @@ If this work is useful in your research, please cite the paper:
 
 ```bibtex
 @article{WANG2026134197,
-title = {Region-aware Frequency Divide-and-Conquer for Shadow Removal},
-journal = {Expert Systems with Applications},
-pages = {134197},
-year = {2026},
-issn = {0957-4174},
-author = {Yinan Wang and Yan Huang and Yong Xu and Patrick Le Callet},
+  title = {Region-aware Frequency Divide-and-Conquer for Shadow Removal},
+  journal = {Expert Systems with Applications},
+  pages = {134197},
+  year = {2026},
+  issn = {0957-4174},
+  author = {Yinan Wang and Yan Huang and Yong Xu and Patrick Le Callet},
 }
 ```
