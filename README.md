@@ -27,7 +27,17 @@ tqdm
 natsort
 ```
 
-The repository contains a precompiled NATTEN extension named `libnatten.cpython-39-x86_64-linux-gnu.so`, intended for the environment above on 64-bit Linux. If it is incompatible with your system, rebuild the NATTEN extension before running inference.
+Install the PyTorch and NATTEN builds matching the recommended environment:
+
+```bash
+pip install torch==2.1.0 torchvision==0.16.0 \
+  --index-url https://download.pytorch.org/whl/cu118
+
+pip install "natten==0.15.1+torch210cu118" \
+  -f https://whl.natten.org/old/
+```
+
+The repository contains only the project-specific Python extension of NATTEN. The compiled NATTEN backend is supplied by the official wheel and is not stored in this repository. Other Python, PyTorch, or CUDA versions require a matching NATTEN wheel or a source build.
 
 ## Dataset preparation
 

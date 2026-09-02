@@ -15,7 +15,7 @@ from skimage import img_as_ubyte
 from rfdc_net import RFDCNet
 
 parser = argparse.ArgumentParser(description='RGB denoising evaluation on the validation set of SIDD')
-parser.add_argument('--input_dir', default="/path/to/ISTD_adjusted/test",
+parser.add_argument('--input_dir', default="/media/nan/disk1/dataset/SISR_DATASET/ISTD_adjusted/test",
     type=str, help='Directory of validation images')
 parser.add_argument('--result_dir', default='results/aistd',
     type=str, help='Directory for results')

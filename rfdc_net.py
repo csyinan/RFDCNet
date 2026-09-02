@@ -6,7 +6,9 @@ from einops import rearrange
 from timm.models.layers import DropPath, trunc_normal_
 import torch.autograd
 from natten import NeighborhoodAttention2D as NeighborhoodAttention
-from natten import NeighborhoodAttention2D_QKAug as NeighborhoodAttention_QueryAug
+from models.natten2d_qkaug import (
+    NeighborhoodAttention2D_QKAug as NeighborhoodAttention_QueryAug,
+)
 
 def dwt_init(x):
     x01 = x[:, :, 0::2, :] / 2
