@@ -1,6 +1,6 @@
 # Region-aware Frequency Divide-and-Conquer for Shadow Removal
 
-This repository is the **official implementation** of the paper **“Region-aware Frequency Divide-and-Conquer for Shadow Removal”**, published in **Expert Systems with Applications (ESWA), 2026**.
+This repository is the **official implementation** of the paper **“Region-aware Frequency Divide-and-Conquer for Shadow Removal”**, published in **Expert Systems with Applications (ESWA), 2027**.
 
 
 ## Environment
@@ -27,17 +27,12 @@ tqdm
 natsort
 ```
 
-Install the PyTorch and NATTEN builds matching the recommended environment:
+Install the NATTEN builds matching the recommended environment:
 
 ```bash
-pip install torch==2.1.0 torchvision==0.16.0 \
-  --index-url https://download.pytorch.org/whl/cu118
-
 pip install "natten==0.15.1+torch210cu118" \
   -f https://whl.natten.org/old/
 ```
-
-
 
 ## Dataset preparation
 
@@ -77,6 +72,18 @@ python utils/boundary_mask.py
 
 The generated masks will be saved under `<dataset_root>/test_Boundary_k7/`.
 
+## Pretrained models and results
+
+Pretrained model checkpoints and result images are available from the [RFDCNet repository on Hugging Face](https://huggingface.co/wangyinan/RFDCNet/tree/main).
+
+| Resource | Dataset | Download |
+| --- | --- | --- |
+| Model checkpoint | AISTD | [`model_aistd.pth`](https://huggingface.co/wangyinan/RFDCNet/blob/main/model_aistd.pth) |
+| Model checkpoint | SRD | [`model_srd.pth`](https://huggingface.co/wangyinan/RFDCNet/blob/main/model_srd.pth) |
+| Result images | AISTD | [`result_aistd.zip`](https://huggingface.co/wangyinan/RFDCNet/blob/main/result_aistd.zip) |
+| Result images | SRD | [`result_srd.zip`](https://huggingface.co/wangyinan/RFDCNet/blob/main/result_srd.zip) |
+| Result images | UIUC | [`result_uiuc.zip`](https://huggingface.co/wangyinan/RFDCNet/blob/main/result_uiuc.zip) |
+
 ## Testing
 
 
@@ -108,11 +115,12 @@ The restored images are written to the directory specified by `--result_dir`, re
 If this work is useful in your research, please cite the paper:
 
 ```bibtex
-@article{WANG2026134197,
-  title = {Region-aware Frequency Divide-and-Conquer for Shadow Removal},
+@article{WANG2027134197,
+  title = {Region-aware frequency divide-and-conquer for shadow removal},
   journal = {Expert Systems with Applications},
+  volume = {333},
   pages = {134197},
-  year = {2026},
+  year = {2027},
   issn = {0957-4174},
   author = {Yinan Wang and Yan Huang and Yong Xu and Patrick Le Callet},
 }
